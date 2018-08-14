@@ -48,8 +48,7 @@ public class LoginFunctionality extends Setup{
 		Utility.Explicitwait(driver, 420, element);
 		Utility.userdefwait(element);
 		driver.pressKeyCode(AndroidKeyCode.BACK);
-		Assert.assertTrue(driver.findElement(hamburgermenu).isDisplayed());
-		
+		Assert.assertTrue(driver.findElement(hamburgermenu).isDisplayed());	
 	}
 	
 
