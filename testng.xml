@@ -5,6 +5,7 @@
    <classes>
           <class name="com.eBay.appiumsetup.Setup"/>
           <class name="com.eBay.TestCases.LoginFunctionality"/>
+          <class name="com.eBay.TestCases.Purchase"/>
    </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

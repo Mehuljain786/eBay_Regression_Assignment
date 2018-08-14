@@ -3,15 +3,17 @@
 <suite name="Failed suite [EbaySuite]">
   <test name="Test(failed)">
     <classes>
-      <class name="com.eBay.appiumsetup.Setup">
+      <class name="com.eBay.TestCases.Purchase">
         <methods>
           <include name="setUp"/>
+          <include name="setexcel"/>
           <include name="tearDown"/>
+          <include name="Purchaseproduct"/>
         </methods>
-      </class> <!-- com.eBay.appiumsetup.Setup -->
+      </class> <!-- com.eBay.TestCases.Purchase -->
       <class name="com.eBay.TestCases.LoginFunctionality">
         <methods>
-          <include name="Loginapp"/>
+          <include name="performOrientation"/>
           <include name="setexcel"/>
         </methods>
       </class> <!-- com.eBay.TestCases.LoginFunctionality -->

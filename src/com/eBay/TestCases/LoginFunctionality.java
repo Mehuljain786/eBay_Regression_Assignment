@@ -55,7 +55,6 @@ public class LoginFunctionality extends Setup{
 	public void androidgestures()
 	{
 		Utility.Scroll(driver);
-		driver.swipe(570, 833, 2, 833, 20);
 	}
 	
 	@Test(priority=3)

@@ -68,7 +68,7 @@ public class Utility extends Setup{
 		for(int i=0;i<5;i++)
 		{
 		Dimension dimensions = driver.manage().window().getSize();
-		Double screenHeightStart = dimensions.getHeight() * 0.5;
+		Double screenHeightStart = dimensions.getHeight() * 0.9;
 		int scrollStart = screenHeightStart.intValue();
 		Double screenHeightEnd = dimensions.getHeight() * 0.2;
 		int scrollend = screenHeightEnd.intValue();
