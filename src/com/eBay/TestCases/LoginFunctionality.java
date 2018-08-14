@@ -33,7 +33,7 @@ public class LoginFunctionality extends Setup{
 		Database.setExcelFile(Path,"LoginDetail");
 	}
 	
-	@Test
+	@Test(priority=1)
 	public void Loginapp() throws Exception
 	{
 		driver.findElement(hamburgermenu).click();
@@ -44,12 +44,37 @@ public class LoginFunctionality extends Setup{
 		driver.findElement(Password).sendKeys(Database.getCellData(1,1));
 		driver.pressKeyCode(AndroidKeyCode.ENTER);
 		Thread.sleep(5000);
-		element = driver.findElement(Nothanks);
-		Utility.Explicitwait(driver, 420, element);
-		Utility.userdefwait(element);
+		Utility.Explicitwait(driver, 20, Nothanks);
+		//Utility.userdefwait(driver,Nothanks);
+		if(driver.findElements(Nothanks).size()>0)
 		driver.pressKeyCode(AndroidKeyCode.BACK);
 		Assert.assertTrue(driver.findElement(hamburgermenu).isDisplayed());	
 	}
 	
+	@Test(priority=2)
+	public void androidgestures()
+	{
+		Utility.Scroll(driver);
+		driver.swipe(570, 833, 2, 833, 20);
+	}
+	
+	@Test(priority=3)
+	 public void performOrientation() throws InterruptedException {
+	  //Get and print current screen orientation.
+	  System.out.println("Current screen orientation Is : " + driver.getOrientation());
+	  System.out.println("Changing screen Orientation to LANDSCAPE.");
+	  //Changing screen Orientation to LANDSCAPE.
+	  driver.rotate(org.openqa.selenium.ScreenOrientation.LANDSCAPE);
+	  //Get and print screen orientation after changing It.
+	  System.out.println("Now screen orientation Is : "+ driver.getOrientation());
+	  Thread.sleep(5000);
+	  System.out.println("Changing screen Orientation to PORTRAIT.");
+	  //Changing screen Orientation to PORTRAIT.
+	  driver.rotate(org.openqa.selenium.ScreenOrientation.PORTRAIT);
+	  //Get and print screen orientation after changing It.
+	  System.out.println("Now screen orientation Is : "+ driver.getOrientation());
+	  Thread.sleep(5000);
+	 }
+
 
 }
