@@ -15,11 +15,11 @@ import io.appium.java_client.android.AndroidElement;
 
 public class Utility extends Setup{
 
-	public static boolean  Explicitwait(AndroidDriver driver,int timeout,By element)
+	public static boolean  Explicitwait(AndroidDriver driver,int timeout,AndroidElement element)
 	{
 		try{
             WebDriverWait wait = new WebDriverWait(driver, timeout);
-            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(element));
+            wait.until(ExpectedConditions.visibilityOf(element));
             return true;
         }catch(Exception e){
             return false;
@@ -76,5 +76,7 @@ public class Utility extends Setup{
 		action.press(20, scrollStart).waitAction(10).moveTo(20, scrollend).release().perform();
 		}
 	}	
+	
+	
 	
 }
